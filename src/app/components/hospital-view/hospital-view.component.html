@@ -1,0 +1,45 @@
+<div class="section-header" fxLayout="row">
+    <h3>Hospital Management System</h3>
+</div>
+<div class="container">
+    <app-data-table [tableHeaderName]="tableHaderName" [columns]="columns" [tableData]="hospitalList"
+        (rowAction)="tableEvent($event)" [linksColumnIndex]="[2]" [actions]="rowActions"
+        [sortByParameter]="sortByParameter"></app-data-table>
+</div>
+<div class="section-header" fxLayout="row">
+    <h3>Copyright @ 2018 Hospital</h3>
+</div>
+
+<!-- <table mat-table [dataSource]="hospitalList">
+    <ng-container [matColumnDef]="col" *ngFor="let col of columns">
+        <th mat-header-cell *matHeaderCellDef>
+            <span *ngIf="col !== 'edit'">
+                {{col}}
+            </span>
+        </th>
+        <td mat-cell *matCellDef="let element;let i=index">
+            <div *ngIf="!element.isEdit">
+                <div class="btn-edit" *ngIf="col === 'edit'; spanHeader">
+                    <button (click)="viewConfing(element)">View</button>
+                    <button (click)="element.isEdit = !element.isEdit">edit</button>
+                    <button (click)="deleteRow(element)">delete</button>
+                </div>
+                <span #spanHeader>
+                    {{element[col]}}
+                </span>
+            </div>
+            <div *ngIf="element.isEdit">
+                <div class="btn-edit" *ngIf="col === 'edit'; else dataField">
+                    <button (click)="element.isEdit = !element.isEdit">Done</button>
+                </div>
+                <ng-template #dataField>
+                    <mat-form-field>
+                        <input [type]="dataSchema[col]" matInput [(ngModel)]="element[col]">
+                    </mat-form-field>
+                </ng-template>
+            </div>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+</table> -->

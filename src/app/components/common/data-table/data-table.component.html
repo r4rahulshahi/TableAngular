@@ -1,0 +1,77 @@
+<div class="d-flex flex-column">
+    <div class="tableHeader">
+        <h3>{{tableHeaderName}}</h3>
+    </div>
+    <div class="sortBycontainer">
+        <div class="sortButtonContainer">
+            <button class="sortButton" (click)="sortByActionEvent(sortByParameter,'SORT')">Sort By
+                {{sortByParameter.label}}</button>
+        </div>
+        <div class="backContainer" *ngIf="backButtonShow">
+            <button class="backButton" (click)="navigate()">Back</button>
+        </div>
+    </div>
+    <div class="tableBody">
+        <table class="table table-responsive">
+            <thead>
+                <tr class="table-head">
+                    <th *ngFor="let head of columns" class="py-0 dimgray-text">{{head}}</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let row of tableData;let i = index;" class="custom-table-rows">
+                <tr class="table-row">
+                    <td *ngFor="let head of columns;let j = index;">
+                        <span *ngIf="!linksColumnIndex.includes(j)" id="data_table_{{head}}">{{row[head]}}</span>
+                        <a class="primary-color-new" *ngIf="linksColumnIndex.includes(j)"
+                            (click)="rowActionEvent(row,'VIEW')" data-automationId="row-link">{{row[head]}}</a>
+                    </td>
+                    <div class="inlineActions">
+                        <div *ngFor=" let act of actions;let m=index">
+                            <div class="iconAsBtn" (click)="rowActionEvent(row,act.label)"
+                                data-automationId="row-actions">
+                                <span>{{act.label}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- <div class="tableBody">
+        <table mat-table [dataSource]="tableData">
+            <ng-container [matColumnDef]="col" *ngFor="let col of columns">
+                <th mat-header-cell *matHeaderCellDef>
+                    <span *ngIf="col !== 'edit'">
+                        {{col}}
+                    </span>
+                </th>
+                <td mat-cell *matCellDef="let element;let i=index">
+                    <div *ngIf="!element.isEdit">
+                        <div class="btn-edit" *ngIf="col === 'edit'; spanHeader">
+                            <button (click)="rowActionEvent(element,'VIEW')">View</button>
+                            <button (click)="element.isEdit = !element.isEdit">edit</button>
+                            <button (click)="rowActionEvent(element,'DELETE')">delete</button>
+                        </div>
+                        <span #spanHeader>
+                            {{element[col]}}
+                        </span>
+                    </div>
+                    <div *ngIf="element.isEdit">
+                        <div class="btn-edit" *ngIf="col === 'edit'; else dataField">
+                            <button (click)="element.isEdit = !element.isEdit">Done</button>
+                        </div>
+                        <ng-template #dataField>
+                            <mat-form-field>
+                                <input matInput [(ngModel)]="element[col]">
+                            </mat-form-field>
+                        </ng-template>
+                    </div>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+        </table>
+    </div> -->
+
+</div>

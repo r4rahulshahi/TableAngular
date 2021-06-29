@@ -1,0 +1,15 @@
+.section-header{
+    box-shadow: 0px 0px 6px #00000059;
+    text-align: center; 
+   height: 50px;
+   background-color: #3274e9;
+}
+h3{
+    padding: 12px;
+}
+.container {
+    max-height: 80vh;
+    overflow-y: auto;
+    display: block;
+    position: relative;
+  }

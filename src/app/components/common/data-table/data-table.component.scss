@@ -1,0 +1,139 @@
+table {
+     border-collapse: separate;
+    border-spacing: 0 4px;
+     border: 1px solid #f1fbfd;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .table-head {
+    background: #E3EDEF;
+  }
+  
+  .table-head>th,
+  .table-row>td {
+    height: 40px;
+    border: none;
+    vertical-align: middle;
+   // text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: initial;
+  }
+
+  .table-row{
+    box-shadow: 0px 0px 1px #00000059;
+  }
+  .table-row:hover {
+     transition: ease-in-out 200ms;
+     box-shadow: 0px 0px 6px #00000059;
+     -webkit-box-shadow:0px 0px 13px #00000059;
+   }
+
+tr th:first-child,
+tr td:first-child {
+  padding-left: 12px;
+}
+
+tr th:last-child,
+tr td:last-child {
+  padding-left: 12px i !important;
+}
+
+td {
+  font-weight: normal;
+  color: dimgray;
+}
+
+a:hover {
+  text-decoration: underline !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+  transition: ease-in 400ms;
+}
+
+
+.inlineActions {
+    background: white;
+    position: absolute;
+    right: 16%;
+    margin: 10px;
+    display: none;
+  }
+  
+  .iconAsBtn span {
+    font-size: 12px;
+    color: #3db8db;
+    margin: 0rem 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .iconAsBtn:hover span {
+    color: #3db8db;
+  }
+  
+  tbody:hover .inlineActions {
+    display: flex;
+  }
+  
+  .iconAsBtn:hover .normal-icon {
+    display: none;
+  }
+  
+  .iconAsBtn:hover .hover-icon {
+    display: block;
+    transition: ease-in 400ms;
+  }
+  
+  .normal-icon {
+    display: block;
+    transition: ease-in 400ms;
+  }
+  
+  .hover-icon {
+    display: none;
+  }
+
+  .primary-color-new{
+      color: #3db8db;
+  }
+
+  h3 {
+padding: 12px;
+  }
+
+  .tableHeader{
+    box-shadow: 0px 0px 6px #00000059;
+    -webkit-box-shadow:0px 0px 13px #00000059;
+    text-align: center;
+    margin: 0px 48px;
+  }
+
+.sortBycontainer{
+    padding: 12px;
+    display: flex;
+    
+}
+.sortButton{
+    background-color: #00804e;
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    color:white;
+}
+
+.backButton{
+    background-color: #00804e;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    color:white; 
+}
+.backContainer{
+    margin-left: 24px;
+}
